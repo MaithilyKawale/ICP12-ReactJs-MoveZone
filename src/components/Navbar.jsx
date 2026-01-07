@@ -45,13 +45,13 @@ function Navbar() {
                 </div>
 
                 <div className="flex items-center gap-4 md:gap-5">
-                <Button
-                    className="mt-2 flex items-center gap-2"
-                    variant="primary"
-                    title="login"
-                    size="lg"
-                    onClick={() => navigate("/login")}
-                />
+                    <Button
+                        className=" flex items-center gap-2"
+                        variant="primary"
+                        title="login"
+                        size="lg"
+                        onClick={() => navigate("/login")}
+                    />
 
                     <MenuIcon
                         onClick={() => setOpen(true)}

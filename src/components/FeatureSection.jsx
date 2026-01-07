@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router'
 import MovieCard from './MovieCard'
 import movies from '../data/MovieData'
 import { ArrowRightIcon } from 'lucide-react'
-import Button from './Button'
+import Button from '../components/Button'
 const FeatureSection = () => {
   const navigate = useNavigate()
   return (
@@ -21,8 +21,9 @@ const FeatureSection = () => {
         </div> 
         <div className="flex justify-center mt-12">
           <Button
+          variant="primary"
             title="Show More"
-            size="xl"
+            size="md"
             onClick={() => navigate('/movies')}
           />
         </div>
