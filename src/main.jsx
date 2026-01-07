@@ -19,7 +19,7 @@ import Movie from './views/Movie'
     <Route path="/" element={<Home/>}/>
     <Route path="/movie" element={<Movie/>}/>
     <Route path="/about" element={<About/>}/>
-    <Route path="/booking" element={<Booking/>}/>
+    <Route path="/booking/:id" element={<Booking/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/payment" element={<Payment/>}/>
     <Route path="/register" element={<Register/>}/>
