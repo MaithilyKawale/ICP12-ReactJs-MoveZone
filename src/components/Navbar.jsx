@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
-import { Clapperboard, MenuIcon, SearchIcon, XIcon } from 'lucide-react'
+import { Clapperboard, MenuIcon, XIcon } from 'lucide-react'
+import Button from "../components/Button"
 
 function Navbar() {
     const [open, setOpen] = useState(false)
@@ -9,7 +10,6 @@ function Navbar() {
     return (
         <header className="fixed top-0 left-0 z-50 w-full bg-transparent">
             <nav className="flex items-center justify-between px-6 md:px-16 py-5">
-
 
                 <Link to="/" className="flex items-center gap-2 text-white">
                     <Clapperboard className="text-red-500 w-8 h-8" />
@@ -30,29 +30,28 @@ function Navbar() {
                         className="md:hidden w-8 h-8 text-white cursor-pointer absolute top-6 right-6"
                     />
 
-                    <Link to="/" onClick={() => setOpen(false)} className="text-white hover:text-[#1B3C53]">
+                    <Link to="/" onClick={() => setOpen(false)} className="text-white hover:text-white">
                         Home
                     </Link>
-                    <Link to="/movie" onClick={() => setOpen(false)} className="text-white hover:text-[#1B3C53]">
+                    <Link to="/movie" onClick={() => setOpen(false)} className="text-white hover:text-white">
                         Movie
                     </Link>
-                    <Link to="/booking" onClick={() => setOpen(false)} className="text-white hover:text-[#1B3C53]">
+                    <Link to="/booking" onClick={() => setOpen(false)} className="text-white hover:text-white">
                         Booking
                     </Link>
-                    <Link to="/about" onClick={() => setOpen(false)} className="text-white hover:text-[#1B3C53]">
+                    <Link to="/about" onClick={() => setOpen(false)} className="text-white hover:text-white">
                         About
                     </Link>
                 </div>
 
                 <div className="flex items-center gap-4 md:gap-5">
-                    <SearchIcon className="hidden md:block w-6 h-6 text-white hover:text-[#234C6A] cursor-pointer" />
-
-                    <button
-                        onClick={() => navigate('/login')}
-                        className="border border-white-600 hidden sm:block px-5 py-2 bg-[#1B3C53] hover:bg-[#234C6A] text-white rounded-full"
-                    >
-                        Login
-                    </button>
+                <Button
+                    className="mt-2 flex items-center gap-2"
+                    variant="primary"
+                    title="login"
+                    size="lg"
+                    onClick={() => navigate("/login")}
+                />
 
                     <MenuIcon
                         onClick={() => setOpen(true)}
