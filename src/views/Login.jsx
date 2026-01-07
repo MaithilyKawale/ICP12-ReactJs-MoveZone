@@ -42,3 +42,18 @@ const Login = () => {
               required
             />
           </div>
+
+          {/* Button */}
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
