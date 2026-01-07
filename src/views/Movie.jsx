@@ -17,6 +17,7 @@ const SelectBox = ({ value, onChange, options }) => {
 function Movie() {
   const [searchMovies, setSearchMovies] = useState("");
   const [movieType, setMovieType] = useState("All");
+   const [movieLang, setMovieLang] = useState("All");
   return (
     <div className='bg-[#1B3C53] min-h-screen'>
       <div className='flex flex-col w-[100%]  md:flex-row gap-5 items-center justify-center  p-10 '>
@@ -31,6 +32,12 @@ function Movie() {
                     onChange={(e) => setMovieType(e.target.value)}
                     options={["All", "Action", "Comedy", "Drama", "Horror", "Romance", "Thriller"]}
                 />
+                <SelectBox
+                    value={movieLang}
+                    onChange={(e) => setMovieLang(e.target.value)}
+                    options={["All", "English", "Hindi", "Marathi", "Tamil"]}
+                />
+                
       </div>
     </div>
 
