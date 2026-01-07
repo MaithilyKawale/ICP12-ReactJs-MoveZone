@@ -1,6 +1,7 @@
 import React from 'react'
 
 function Movie() {
+  const [searchMovies, setSearchMovies] = useState("");
   return (
    <div className='bg-[#1B3C53] min-h-screen'>
             <div className='flex flex-col w-[100%]  md:flex-row gap-5 items-center justify-center  p-10 '>
