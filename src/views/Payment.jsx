@@ -68,3 +68,45 @@ const Payment = () => {
             />
           </div>
 
+          {/* Expiry Date */}
+          <div className="mb-4">
+            <label className="block mb-2">Expiry Date</label>
+            <input
+              type="month"
+              name="expiry"
+              value={paymentData.expiry}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+
+          {/* CVV */}
+          <div className="mb-4">
+            <label className="block mb-2">CVV</label>
+            <input
+              type="password"
+              name="cvv"
+              placeholder="***"
+              value={paymentData.cvv}
+              onChange={handleChange}
+              required
+              maxLength="3"
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+
+          {/* Amount */}
+          <div className="mb-6">
+            <label className="block mb-2">Amount</label>
+            <input
+              type="number"
+              name="amount"
+              placeholder="Enter amount"
+              value={paymentData.amount}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border rounded-md"
+            />
+          </div>
+
