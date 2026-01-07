@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import movies from '../data/movies'
-import { Languages } from 'lucide-react'
+import { Clapperboard } from 'lucide-react'
 import MovieCard from '../components/MovieCard'
 const SelectBox = ({ value, onChange, options }) => {
   return (
@@ -17,10 +17,19 @@ const SelectBox = ({ value, onChange, options }) => {
     </select>
   )
 }
+  
 function Movie() {
   const [searchMovies, setSearchMovies] = useState("");
   const [movieType, setMovieType] = useState("All");
    const [movieLang, setMovieLang] = useState("All");
+
+   const filteredMovies = movies.filter((movie) => {
+        const newMatch = movie.name.toLowerCase().includes(searchMovies.toLowerCase());
+        const typeMatch = movieType === "All" || movie.type === movieType;
+        const languageMatch = movieLang === "All" || movie.language === movieLang;
+        return typeMatch && languageMatch && newMatch;
+    });
+    
   return (
     <div className='bg-[#1B3C53] min-h-screen'>
       <div className='flex flex-col w-[100%]  md:flex-row gap-5 items-center justify-center  p-10 '>
@@ -42,14 +51,13 @@ function Movie() {
                 />        
       </div>
         <div className='flex gap-10 p-7 items-center justify-center flex-wrap '>
-                {
-                  movies.map((movie, index)=>{
-                
-                   return(
-                      <MovieCard {...movie} key={index}/>
-                   )
-                  })
-                }
+                 {filteredMovies.length > 0 ? (
+                    filteredMovies.map((movie, index) => (
+                        <MovieCard key={index} {...movie} />
+                    ))
+                ) : (
+                    <p className="text-[#E3E3E3] text-2xl flex items-center gap-4">No movies found <Clapperboard /></p>
+                )}
             </div>
     </div>
 
