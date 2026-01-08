@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
 import FeatureSection from '../components/FeatureSection'
-import TrailerGallery from '../components/TrailerGallery'
+import TrailerSection from '../components/TrailerSection.jsx'
 
 function Home() {
   return (
@@ -11,7 +11,7 @@ function Home() {
       <Navbar />
         <HeroSection />
         <FeatureSection />
-        <TrailerGallery />
+        <TrailerSection />
       <Footer />
     </div>
   )
